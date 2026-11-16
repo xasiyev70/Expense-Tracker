@@ -28,4 +28,12 @@ def validateAmount(amount):
 
     return amount
 
-        
+
+def validateCategory(category):
+     category = category.strip().lower()
+
+     if category not in CATAGORIES:
+          invalidExpense("Invalid category!")
+
+     return category
+               
