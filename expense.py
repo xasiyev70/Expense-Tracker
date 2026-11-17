@@ -31,20 +31,19 @@ def searchExpense(expenseId):
     for i in expenses:
         if i["id"] == expenseId:
             print(i)
-        else:
-            print(expensesNotFound())
+    else:
+        print(expensesNotFound())
+
+
 
 def updateExpense(expenseId,title,amount,category):
     expenses = loadExpenses()
     for i in expenses:
         if i["id"] == expenseId:
-            titleN = validateTitle(title)
-            amountN = validateAmount(amount)
-            categoryN = validateCategory(category)
-
-            i["title"] = titleN
-            i["amount"] = amountN
-            i["category"] = categoryN
+            i["title"] = validateTitle(title)
+            i["amount"] = validateAmount(amount)
+            i["category"] = validateCategory(category)
+            
 
             saveExpenses(expenses)
 

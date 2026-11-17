@@ -40,16 +40,32 @@ def startApp():
                 print("Expense ID:",expense["id"])
 
             elif choice == 2:
-                getAllExpenses()
+                expenses = getAllExpenses()
+                for i in expenses:
+                    print(i)
 
             elif choice == 3:
-                searchExpense()
+                expenseID = input("enter expense id: ")
+                title = input("enter new expense title: ")
+                amount = input("enter new expense amount: ")
+                category = input("enter new expense category: ")
+                updateExpense(expenseID, title, amount, category)
             elif choice == 4:
-               
-
-
-
-
+                expenseID = input("enter expense id: ")
+                deleteExpense(expenseID)
+            elif choice == 5:
+                expenseID = input("enter expense id: ")
+                searchExpense(expenseID)
+            elif choice == 6:
+                totalExpenses()
+            elif choice == 7:
+                for i in CATAGORIES:
+                    print(i)
+            elif choice == 8:
+                exportToCsv()
+            elif choice == 9:
+                print("exit app")
+                break
 
         except Exception as e:
             print(e)

@@ -1,13 +1,14 @@
 from exception import invalidExpense
 
 CATAGORIES = [
-    "Food",
-    "Shopping",
-    "Education",
-    "Health",
-    "Entertaiment",
-    "Other"
+    "food",
+    "shopping",
+    "education",
+    "health",
+    "entertaiment",
+    "other"
 ]
+
 
 def validateTitle(title):
     title = title.strip()
@@ -36,4 +37,3 @@ def validateCategory(category):
           invalidExpense("Invalid category!")
 
      return category
-               

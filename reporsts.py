@@ -10,17 +10,18 @@ def totalExpenses():
     for i in expenses:
         total += i["amount"]
 
-        print(total)
+    print(total)
 
-def exporToCsv():
+
+def exportToCsv():
     expenses = getAllExpenses()
 
     filePath = "data/expenses.csv"
-
+    
     fieldNames = ["id","title","amount","category","date"]
     
-    with open("expense.csv","w",encoding="utf-8") as f:
-        writer = csv.reader(f,newFile="",FieldNames=fieldNames)
+    with open("expenses.csv","w",encoding="utf-8") as f:
+        writer = csv.DictWriter(f,fieldnames=fieldNames)
         writer.writeheader()
         writer.writerows(expenses)
 
